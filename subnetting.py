@@ -39,7 +39,7 @@ def subnetmask(num, network_mask):
     print('Subnet Mask - ',".".join(network_mask[0:4]))
 
 
-def Subnetting(ip, num, className, ip_addresses,network_mask):
+def Subnetting(ip, num, className, ip_addresses):
     temp = 0 
     if className == "A":
         place2 = ip_addresses / (256 ** 2) 
@@ -47,7 +47,7 @@ def Subnetting(ip, num, className, ip_addresses,network_mask):
             (f"Subnet {i+1} : ") 
             print(temp) 
             print("## Subnet Address : ", ip[0] + '.' + str(temp) + '.0' + '.0') 
-            # print("Subnet mask : ")
+            
             temp+= int(place2) 
             print("Broadcast address : ", ip[0] + '.' + str(temp - 1) + '.255' + '.255') 
             print("Valid range of host IP address : ", ip[0] + '.' + str(temp - int(place2)) + '.' + '0' + '.1' + '\t-\t' + ip[0] + '.' + str(temp - 1) + '.254' + '.254')
@@ -96,4 +96,4 @@ if ord(networkClass) < 68:
     print('Total number of IP addresses possible i each subnet : ', num_ip)
 
 subnetmask(num_subnet, network_mask)
-Subnetting(ip, num_subnet, networkClass, num_ip, network_mask) 
+Subnetting(ip, num_subnet, networkClass, num_ip) 

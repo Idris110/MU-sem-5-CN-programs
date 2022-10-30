@@ -10,8 +10,9 @@ void printWind(ll k, ll winSize, ll frames){
 
 int  transmission(ll &winSize, ll &frames)
 {
-    int i = 0, totalFramesSent=winSize;
+    int i = 0, totalFramesSent= winSize;
     printWind(0, winSize, frames);
+
     while (i < frames)
     {
         int z = 0;
@@ -19,7 +20,8 @@ int  transmission(ll &winSize, ll &frames)
         {
             int f = rand() % 4;
             bool rand = (f<1) ? false : true;
-            if (rand)
+            
+            if (rand) // 75% chance
             {
                 cout << "-Acknowledgment for Frame " << k+1 << "..." << endl;
                 
