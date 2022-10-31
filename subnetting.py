@@ -88,7 +88,7 @@ ip = [str(i) for i in ip]
 network_mask = lst[1] 
 print('Network Mask : ', network_mask) 
 
-num_subnet = int(input('\nNo. of subnets(power of 2) : ')) 
+num_subnet = int(input('\nNo. of subnets(power of 2) : '))
 num_ip = int(2 ** (8 * (68 - ord(networkClass))) / num_subnet) 
 print('\nThe no. of bits in the subnet id : ', int(math.log(num_subnet, 2))) 
 

@@ -19,10 +19,11 @@ class Server {
 
     public static void main(String args[]) throws Exception {
         ServerSocket ss = new ServerSocket(5000);
-        System.out.println("Server started");
-        System.out.println("Waiting for a client ...");
+            System.out.println("Server started");
+            System.out.println("Waiting for a client ...");
         Socket s = ss.accept();
-        System.out.println("Client accepted");
+            System.out.println("Client accepted");
+            
         DataInputStream din = new DataInputStream(s.getInputStream());
         DataOutputStream dout = new DataOutputStream(s.getOutputStream());
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));

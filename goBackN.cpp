@@ -13,7 +13,7 @@ int  transmission(ll &winSize, ll &frames)
     int i = 0, totalFramesSent= winSize;
     printWind(0, winSize, frames);
 
-    while (i < frames)
+    while (i < frames) //i => ack remaing
     {
         int z = 0;
         for (int k = i; k < i + winSize && k < frames; k++)
@@ -26,14 +26,15 @@ int  transmission(ll &winSize, ll &frames)
                 cout << "-Acknowledgment for Frame " << k+1 << "..." << endl;
                 
                 if(k+winSize <frames)
-                cout << "Sending Frame " << k+1+winSize << "..." << endl;
+                    cout << "Sending Frame " << k+1+winSize << "..." << endl;
+
                 totalFramesSent++;
                 z++;
             }
             else
             {
-                cout << "#Timeout!! Frame Number : " << k+1 << " Not Received" << endl;
-                cout << "#Retransmitting Window..." << endl;
+                cout << "#Timeout!! Frame Number : " << k+1 << " Not Received" << endl<< "#Retransmitting Window..." << endl;
+                
                 printWind(k, winSize, frames); //go back N
                 totalFramesSent += winSize;
                 break;
